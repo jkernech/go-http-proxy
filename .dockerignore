@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.env.tpl
+.git
+.gitignore
+*.go
+Dockerfile
+Makefile
+go-http-proxy*

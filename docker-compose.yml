@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  http_proxy:
+    image: jkernech/http-proxy
+    environment:
+      - 'PATH_MAPPING={}'
+    ports:
+      - 8080:8080
