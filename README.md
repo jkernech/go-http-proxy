@@ -1,5 +1,7 @@
 ## http-proxy
 
+[![CircleCI](https://img.shields.io/circleci/project/github/jkernech/go-http-proxy.svg)](https://circleci.com/gh/jkernech/go-http-proxy) [![Code coverage](https://gocover.io/_badge/github.com/jkernech/go-http-proxy)](https://gocover.io/github.com/jkernech/go-http-proxy) [![Documentation](https://godoc.org/github.com/jkernech/go-http-proxy?status.svg)](https://godoc.org/github.com/jkernech/go-http-proxy)
+
 HTTP proxy that forward requests, useful to expose secure endpoint.
 
 ### Demo
