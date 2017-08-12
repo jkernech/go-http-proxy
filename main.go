@@ -91,7 +91,7 @@ func Index(c *gin.Context) {
 	resp, err := http.Get(requestedURL)
 
 	if err != nil {
-		Error(c, http.StatusNotFound, err)
+		Error(c, http.StatusNotFound)
 		return
 	}
 
@@ -100,7 +100,7 @@ func Index(c *gin.Context) {
 	body, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
-		Error(c, http.StatusInternalServerError, err)
+		Error(c, http.StatusNotFound, err)
 		return
 	}
 
@@ -124,7 +124,7 @@ func Error(c *gin.Context, statusCode int, err ...error) {
 	})
 
 	if err != nil {
-		log.Panic(err)
+		log.Print(err)
 	}
 }
 
