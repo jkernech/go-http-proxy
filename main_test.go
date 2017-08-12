@@ -74,6 +74,35 @@ func Test404Page(t *testing.T) {
 	}
 }
 
+// Test that a favicon.ico request returns a 404
+func TestFaviconNotFound(t *testing.T) {
+	// Create a response recorder
+	w := httptest.NewRecorder()
+
+	// Get a new router
+	r := getRouter()
+
+	// Define the route similar to its definition in the routes file
+	r.GET("/favicon.ico", Index)
+
+	// Create a request to send to the above route
+	req, _ := http.NewRequest("GET", "/favicon.ico", nil)
+
+	// Create the service and process the above request.
+	r.ServeHTTP(w, req)
+
+	// Test that the http status code is 404
+	if w.Code != http.StatusNotFound {
+		t.Fail()
+	}
+
+	// Test that the page contains `404`
+	p, err := ioutil.ReadAll(w.Body)
+	if err != nil || strings.Index(string(p), "404") < 0 {
+		t.Fail()
+	}
+}
+
 // Test that a GET returns a 200 when an URL with a scheme is specified in the Path
 func TestProxyRequestExistingPage(t *testing.T) {
 	// Create a response recorder
