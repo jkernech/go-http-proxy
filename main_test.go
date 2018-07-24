@@ -16,6 +16,11 @@ func getRouter() *gin.Engine {
 	return router
 }
 
+// Test the main file
+func TestMain(t *testing.T) {
+	go main()
+}
+
 // Test that a GET request to the home page returns the status page
 func TestStatusPage(t *testing.T) {
 	// Create a response recorder
