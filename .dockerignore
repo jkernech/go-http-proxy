@@ -3,7 +3,10 @@
 .env.tpl
 .git
 .gitignore
+.sonar
 *.go
 Dockerfile
 Makefile
+coverage*
+dist*
 go-http-proxy*

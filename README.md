@@ -1,6 +1,13 @@
 ## http-proxy
 
-[![CircleCI](https://img.shields.io/circleci/project/github/jkernech/go-http-proxy.svg)](https://circleci.com/gh/jkernech/go-http-proxy) [![Code coverage](https://gocover.io/_badge/github.com/jkernech/go-http-proxy)](https://gocover.io/github.com/jkernech/go-http-proxy) [![Documentation](https://godoc.org/github.com/jkernech/go-http-proxy?status.svg)](https://godoc.org/github.com/jkernech/go-http-proxy)
+[![Documentation](https://godoc.org/github.com/jkernech/go-http-proxy?status.svg)](https://godoc.org/github.com/jkernech/go-http-proxy)
+[![Sonar](https://sonarcloud.io/api/project_badges/measure?project=go-http-proxy&metric=alert_status)](https://sonarcloud.io/dashboard?id=go-http-proxy)
+[![Sonar](https://sonarcloud.io/api/project_badges/measure?project=go-http-proxy&metric=coverage)](https://sonarcloud.io/dashboard?id=go-http-proxy)
+[![Sonar](https://sonarcloud.io/api/project_badges/measure?project=go-http-proxy&metric=security_rating)](https://sonarcloud.io/dashboard?id=go-http-proxy)
+[![Sonar](https://sonarcloud.io/api/project_badges/measure?project=go-http-proxy&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=go-http-proxy)
+[![Sonar](https://sonarcloud.io/api/project_badges/measure?project=go-http-proxy&metric=code_smells)](https://sonarcloud.io/dashboard?id=go-http-proxy)
+[![Sonar](https://sonarcloud.io/api/project_badges/measure?project=go-http-proxy&metric=sqale_index)](https://sonarcloud.io/dashboard?id=go-http-proxy)
+
 
 HTTP proxy that forward requests, useful to expose secure endpoint.
 
@@ -14,12 +21,12 @@ https://go-http-proxy.herokuapp.com/https://gocover.io/_badge/github.com/jkernec
 #### Mapped queries
 Setting the `PATH_MAPPING` env var allows to use shorthand path according to the host mapped, useful for websites that requires basic authentication), e.g
 
-https://go-http-proxy.herokuapp.com/gocover/_badge/github.com/jkernech/go-http-proxy (simple request forwarding)
+https://go-http-proxy.herokuapp.com/https://godoc.org/github.com/jkernech/go-http-proxy?status.svg (simple request forwarding)
 
 https://go-http-proxy.herokuapp.com/sonar/api/badges/measure?key=service-analytics&metric=lines (request forwarding with basic authentication)
 
 ### Configuration
-The following environment variables allow to customize the application
+The following environment variables allow to customise the application
 ```
 PORT=8080 // default port on which the http-proxy listen
 PATH_MAPPING={} // key/value of paths matching hosts, default is an empty object

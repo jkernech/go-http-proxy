@@ -3,7 +3,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -14,10 +13,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-)
-
-var (
-	version = "master"
 )
 
 // GetPathMapping returns a key/value map of the PATH_MAPPING env var.
@@ -134,8 +129,6 @@ func Error(c *gin.Context, statusCode int, err ...error) {
 }
 
 func main() {
-	fmt.Printf("%v", version)
-
 	godotenv.Load()
 
 	gin.SetMode(gin.ReleaseMode)

@@ -1,5 +1,7 @@
 .DS_Store
 .git
 .env
+.sonar
+coverage*
 dist*
 go-http-proxy*

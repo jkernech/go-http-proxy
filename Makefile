@@ -6,6 +6,15 @@ build:
 run:
 	@go run main.go
 
+release:
+	@goreleaser --rm-dist
+
 test:
 	@dep ensure
-	@go test -cover ./...
+	@go test -coverprofile=coverage.out -cover ./...
+
+sonar:
+	wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-2.8.zip
+	unzip sonar-scanner-2.8.zip
+	@sonar-scanner-2.8/bin/sonar-scanner -Dsonar.host.url=$(SONAR_HOST_URL) -Dsonar.login=$(SONAR_LOGIN) -Dsonar.password=$(SONAR_PASS) -e -Dsonar.analysis.mode=publish
+	rm -rf sonar-scanner-2.8*
