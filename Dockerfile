@@ -9,4 +9,6 @@ FROM alpine
 RUN apk add --no-cache ca-certificates openssl
 COPY --from=builder /go/go-http-proxy /bin/http_proxy
 
+HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost:8080 || exit 1
+
 CMD ["/bin/http_proxy"]

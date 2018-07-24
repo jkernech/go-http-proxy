@@ -15,6 +15,8 @@ import (
 	"github.com/joho/godotenv"
 )
 
+var startTime time.Time
+
 // GetPathMapping returns a key/value map of the PATH_MAPPING env var.
 func GetPathMapping() map[string]string {
 	pathMappingValue := os.Getenv("PATH_MAPPING")
@@ -111,7 +113,9 @@ func Index(c *gin.Context) {
 // Status returns the current time in a JSON object
 func Status(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"time": time.Now().String(),
+		"name": "proxy",
+		"startedAt": startTime,
+    "uptime": time.Since(startTime).Seconds(),
 	})
 }
 
